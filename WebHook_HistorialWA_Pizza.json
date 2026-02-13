@@ -1,0 +1,155 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Postgres",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-05T21:00:12.628Z",
+  "description": null,
+  "id": "qIY7DrmdhWBd4wD1",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "WebHook_HistorialWA_Pizza",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "d8506564-a07d-4bb0-9ba0-a43a230ae320",
+        "responseMode": "lastNode",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "64fccf43-0f64-4f0f-a1d3-ac0df0792ff5",
+      "name": "Webhook",
+      "webhookId": "d8506564-a07d-4bb0-9ba0-a43a230ae320"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "historial_conversaciones_juniorspizza",
+          "mode": "list",
+          "cachedResultName": "historial_conversaciones_juniorspizza"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        220,
+        0
+      ],
+      "id": "dc1470a4-b1a3-4f91-9026-085e1e84bf21",
+      "name": "Postgres",
+      "credentials": {
+        "postgres": {
+          "id": "K1LA3eNGbED7IBfW",
+          "name": "Postgres account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-05-05T21:00:12.628Z",
+      "createdAt": "2025-05-05T21:00:12.628Z",
+      "role": "workflow:owner",
+      "workflowId": "qIY7DrmdhWBd4wD1",
+      "projectId": "bMLPVLxvJNyYpOg4",
+      "project": {
+        "updatedAt": "2025-04-10T19:37:33.834Z",
+        "createdAt": "2025-04-10T19:34:51.491Z",
+        "id": "bMLPVLxvJNyYpOg4",
+        "name": "andres mora <anlemoca.pm@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "1be52bcb-fd69-4000-ad4f-8a9b9553dae7",
+        "projectRelations": [
+          {
+            "updatedAt": "2025-04-10T19:34:51.491Z",
+            "createdAt": "2025-04-10T19:34:51.491Z",
+            "userId": "1be52bcb-fd69-4000-ad4f-8a9b9553dae7",
+            "projectId": "bMLPVLxvJNyYpOg4",
+            "user": {
+              "updatedAt": "2026-02-13T18:26:13.532Z",
+              "createdAt": "2025-04-10T19:34:49.729Z",
+              "id": "1be52bcb-fd69-4000-ad4f-8a9b9553dae7",
+              "email": "anlemoca.pm@gmail.com",
+              "firstName": "andres",
+              "lastName": "mora",
+              "personalizationAnswers": {
+                "version": "v4",
+                "personalization_survey_submitted_at": "2025-04-10T19:39:59.967Z",
+                "personalization_survey_n8n_version": "1.86.1",
+                "automationGoalDevops": [
+                  "data-syncing",
+                  "monitoring-alerting"
+                ],
+                "companySize": "<20",
+                "companyType": "systems-integrator",
+                "role": "it",
+                "reportedSource": "friend"
+              },
+              "settings": {
+                "userActivated": true,
+                "easyAIWorkflowOnboarded": true,
+                "firstSuccessfulWorkflowId": "UvY47ZI6TkdR3EGX",
+                "userActivatedAt": 1748458737814,
+                "npsSurvey": {
+                  "responded": true,
+                  "lastShownAt": 1764727678159
+                }
+              },
+              "disabled": false,
+              "mfaEnabled": false,
+              "lastActiveAt": "2026-02-13",
+              "isPending": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "updatedAt": "2025-04-19T14:32:24.162Z",
+      "createdAt": "2025-04-19T14:32:24.162Z",
+      "id": "g3NaHHARog1Wx0jT",
+      "name": "Comida con Menú"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-05-29T14:39:53.902Z",
+  "versionCounter": 1,
+  "versionId": "86f4d5a6-95df-4639-9a40-936d9105550c"
+}
