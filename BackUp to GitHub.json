@@ -218,8 +218,8 @@
       "name": "On clicking 'execute'",
       "type": "n8n-nodes-base.manualTrigger",
       "position": [
-        -928,
-        208
+        -944,
+        176
       ],
       "typeVersion": 1,
       "id": "c7da991a-83c6-4505-b5d0-1d540dc353bd"
@@ -432,8 +432,8 @@
       "name": "Daily @ 20:00",
       "type": "n8n-nodes-base.cron",
       "position": [
-        -928,
-        544
+        -944,
+        512
       ],
       "typeVersion": 1,
       "id": "66a86b88-235b-4a8d-9327-58e8611e274c"
@@ -474,8 +474,8 @@
       "name": "Globals",
       "type": "n8n-nodes-base.set",
       "position": [
-        -688,
-        400
+        -704,
+        368
       ],
       "typeVersion": 1,
       "id": "96d17e9c-c567-405f-9950-7d5c974e5aac"
@@ -517,7 +517,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "position": [
         -480,
-        272
+        368
       ],
       "typeVersion": 1,
       "id": "9f209c72-54f6-41b0-bb0b-d00c2a5bd107",
@@ -548,6 +548,21 @@
         }
       },
       "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Note \n**Double click** to edit me.\npor primera vez se debe crear la carpeta en github\nla autenticacion de los nodos N8N workflow es con la API de N8N\nla variable nombre en header es X-N8N-API-KEY al 13/02/2026, antes aparecia como api_key \nla URL es la direccion en el navegador hasta app\nhttps://primary-production-3466c.up.railway.app/api/v1/workflows\n\n\n\n\n [Guide](https://docs.n8n.io/workflows/components/sticky-notes/)",
+        "height": 688,
+        "width": 448
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -736,
+        -144
+      ],
+      "typeVersion": 1,
+      "id": "278ce294-e9c5-422e-aeaa-b458e50ddaf6",
+      "name": "Sticky Note"
     }
   ],
   "pinData": {},
@@ -621,7 +636,7 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2026-02-13T21:09:23.130Z",
-  "versionCounter": 42,
-  "versionId": "375f41ec-bcc8-4a41-9277-5b50a700eebc"
+  "updatedAt": "2026-02-13T21:19:18.974Z",
+  "versionCounter": 80,
+  "versionId": "622f09b6-34b3-497c-b1e2-2a6c5399b4f5"
 }
