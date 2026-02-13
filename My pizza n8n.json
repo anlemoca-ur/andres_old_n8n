@@ -1,0 +1,286 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Get Order": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat OpenAI": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Products": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Order Product": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-19T16:19:54.631Z",
+  "description": null,
+  "id": "DQvtga7hW5eI3Eoy",
+  "isArchived": false,
+  "meta": null,
+  "name": "My pizza n8n",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "d424a645-b046-4c30-861e-e7448c4e0338",
+      "name": "Calculator",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "position": [
+        -200,
+        140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ae222064-186c-41b9-a10d-f976d6e59d42",
+      "name": "Chat OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        -920,
+        140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "a2e0e295-b40b-48c5-a171-68938e3aeead",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [
+        -760,
+        140
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "toolDescription": "Retrieve detailed information about the product menu.",
+        "url": "https://n8n.io/webhook/get-products"
+      },
+      "id": "5f2af5ea-abfc-4de1-b7c7-a481a688d0c5",
+      "name": "Get Products",
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "position": [
+        -600,
+        140
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "toolDescription": "Process product orders.",
+        "method": "POST",
+        "url": "https://n8n.io/webhook/order-product",
+        "sendBody": true,
+        "parametersBody": {
+          "values": [
+            {
+              "name": "message",
+              "valueProvider": "fieldValue",
+              "value": "={{ $json.chatInput }}"
+            }
+          ]
+        }
+      },
+      "id": "022b462b-279e-40ea-9cec-8ebdcb113c25",
+      "name": "Order Product",
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "position": [
+        -460,
+        140
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "toolDescription": "Get the order status.",
+        "url": "https://n8n.io/webhook/get-orders"
+      },
+      "id": "9f81b402-6a2c-453e-95ee-1bb655713be5",
+      "name": "Get Order",
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "position": [
+        -340,
+        140
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Hellooo! 👋 My name is Pizzaro 🍕. I'm here to help with your pizza order. How can I assist you?\n\n📣 INFO: If you’d like to order a pizza, please include your name + pizza type + quantity. Thank you!",
+        "options": {}
+      },
+      "id": "18f304f8-2f22-4304-aede-0f1c9e64f0ca",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "position": [
+        -1120,
+        -180
+      ],
+      "webhookId": "d925cc6e-6dd7-4459-a917-e68d57ab0e2a",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "=Your name is Pizzaro, and you are an assistant for handling customer pizza orders.\n\n1. If a customer asks about the menu, provide information on the available products.\n2. If a customer is placing an order, confirm the order details, inform them that the order is being processed, and thank them.\n3. If a customer inquires about their order status, provide the order date, pizza type, and quantity."
+        }
+      },
+      "id": "af1846ea-af00-4f9f-bc3e-10010f213766",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        -880,
+        -180
+      ],
+      "executeOnce": false,
+      "typeVersion": 1.6
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-04-19T16:19:54.631Z",
+      "createdAt": "2025-04-19T16:19:54.631Z",
+      "role": "workflow:owner",
+      "workflowId": "DQvtga7hW5eI3Eoy",
+      "projectId": "bMLPVLxvJNyYpOg4",
+      "project": {
+        "updatedAt": "2025-04-10T19:37:33.834Z",
+        "createdAt": "2025-04-10T19:34:51.491Z",
+        "id": "bMLPVLxvJNyYpOg4",
+        "name": "andres mora <anlemoca.pm@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "1be52bcb-fd69-4000-ad4f-8a9b9553dae7",
+        "projectRelations": [
+          {
+            "updatedAt": "2025-04-10T19:34:51.491Z",
+            "createdAt": "2025-04-10T19:34:51.491Z",
+            "userId": "1be52bcb-fd69-4000-ad4f-8a9b9553dae7",
+            "projectId": "bMLPVLxvJNyYpOg4",
+            "user": {
+              "updatedAt": "2026-02-13T18:26:13.532Z",
+              "createdAt": "2025-04-10T19:34:49.729Z",
+              "id": "1be52bcb-fd69-4000-ad4f-8a9b9553dae7",
+              "email": "anlemoca.pm@gmail.com",
+              "firstName": "andres",
+              "lastName": "mora",
+              "personalizationAnswers": {
+                "version": "v4",
+                "personalization_survey_submitted_at": "2025-04-10T19:39:59.967Z",
+                "personalization_survey_n8n_version": "1.86.1",
+                "automationGoalDevops": [
+                  "data-syncing",
+                  "monitoring-alerting"
+                ],
+                "companySize": "<20",
+                "companyType": "systems-integrator",
+                "role": "it",
+                "reportedSource": "friend"
+              },
+              "settings": {
+                "userActivated": true,
+                "easyAIWorkflowOnboarded": true,
+                "firstSuccessfulWorkflowId": "UvY47ZI6TkdR3EGX",
+                "userActivatedAt": 1748458737814,
+                "npsSurvey": {
+                  "responded": true,
+                  "lastShownAt": 1764727678159
+                }
+              },
+              "disabled": false,
+              "mfaEnabled": false,
+              "lastActiveAt": "2026-02-13",
+              "isPending": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-19T16:22:12.966Z",
+  "versionCounter": 1,
+  "versionId": "6a9b1fb6-3327-42f5-925d-3257e9fbf08a"
+}
