@@ -367,7 +367,7 @@
         "repository": "={{$node[\"Globals\"].json[\"repo\"][\"name\"]}}",
         "filePath": "={{$node[\"Globals\"].json[\"repo\"][\"path\"]}}{{ $('N8N Workflow Detail').first().json.name }}.json",
         "fileContent": "={{$node[\"isDiffOrNew\"].json[\"n8n_data_stringy\"]}}",
-        "commitMessage": "=[N8N Backup] {{$node[\"N8N Workflow Detail\"].json.name}}.json ({{$json[\"github_status\"]}})"
+        "commitMessage": "=[Archived {{$node[\"N8N Workflow Detail\"].json.isArchived}}.json] {{$node[\"N8N Workflow Detail\"].json.name}}.json ({{$json[\"github_status\"]}})"
       },
       "name": "GitHub Edit",
       "type": "n8n-nodes-base.github",
@@ -636,7 +636,7 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2026-02-13T21:19:18.974Z",
-  "versionCounter": 80,
-  "versionId": "622f09b6-34b3-497c-b1e2-2a6c5399b4f5"
+  "updatedAt": "2026-02-13T21:34:38.702Z",
+  "versionCounter": 90,
+  "versionId": "2ca8b3c0-6ff8-48b9-aeca-b2f4919438bf"
 }
