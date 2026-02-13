@@ -1,0 +1,1415 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "JSON Parse",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Audio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp Business Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp Business Image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Audio": {
+      "main": [
+        [
+          {
+            "node": "HTTP Download Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Download Audio": {
+      "main": [
+        [
+          {
+            "node": "Convert Audio to Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Video": {
+      "main": [
+        [
+          {
+            "node": "HTTP Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Download Video": {
+      "main": [
+        [
+          {
+            "node": "Convert Video to Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Video to Text": {
+      "main": [
+        [
+          {
+            "node": "format Response 1.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Audio to Text": {
+      "main": [
+        [
+          {
+            "node": "format Response 1.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Image": {
+      "main": [
+        [
+          {
+            "node": "HTTP Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Download Image": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "format Response 1.1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "format Response 1.2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Get User's Message": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Push messages Buffer": {
+      "main": [
+        [
+          {
+            "node": "Get Messages Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Messages Buffer": {
+      "main": [
+        [
+          {
+            "node": "Switch Espera",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DatosNormalizados": {
+      "main": [
+        [
+          {
+            "node": "Push messages Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get Messages Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch Espera": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Delete Messages Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JSON Parse": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Get User's Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp_Trigger": {
+      "main": [
+        [
+          {
+            "node": "DatosNormalizados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Messages Buffer": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tool_pedidos": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-20T21:23:23.047Z",
+  "description": null,
+  "id": "3gexuHRyq1A0H5Cd",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Agente Vendedor WA_JPizza_200525",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=The user sent the following message\nmessage type: {{ $json.message_type }}\nmessage from: {{ $json.message_from }}\nmessage text or description:\n```{{ $json.message_text }}```\n{{ $json.message_caption ? `message caption: ${$json.message_caption.trim()}` : '' }}\nmessage date: {{ $json.message_timestamp }}\nmessage_name: {{ $json.contact_name }}\n",
+        "options": {
+          "systemMessage": "=You are Pizzaiolo, a friendly, efficient, bilingual (English and Spanish) WhatsApp assistant for JUNIOR'S Artisan Pizza. Your primary role is to handle customer orders and inquiries. Always interact with the customer whose contact name is provided as contact_name.\nRestaurant Information (JUNIOR'S)\n\n    Specialty: Artisan Pizza\n    Pizza Size: All pizzas are a single 14-inch large, crispy crust (cut into 8 slices). Emphasize this when asked about sizes.\n    Operating Hours: Monday to Saturday, usually opening around 3:00–4:30 PM, closing around 8:00 PM (exact times may vary). Closed on Sundays. If asked about today's hours: \"Junior's usually opens around 4:00 PM, but it's always good to confirm for today. We're closed on Sundays.\"\n    Location: Coconut Tree Plaza, West End, ROATAN\n    Order Method: Orders are placed via WhatsApp chat for pickup\n    Automated Welcome Message: Customers may receive an automated message with details; your responses follow that context. There's no need to repeat it.\n    Drinks: Soda and Water are listed, but availability can vary. When a customer orders drinks, confirm with: \"Sure, a [drink]. Just to let you know, drink availability can sometimes change, but I'll add it to your order. Junior will confirm when you pick it up.\"\n\nMenu (Prices in USD)\n\nPizzas (all 14-inch):\n\n    🍕 1. Margherita – $21 Mozzarella, homemade sauce, fresh diced tomatoes\n    🍍 2. Hawaiana – $22 Ham and pineapple\n    🍕 3. Pepperoni – $22 Pepperoni with garlic oil\n    🌶️ 4. Meat Lover & Jalapeños – $25 Sausage, pepperoni, ham, jalapeños\n    🥗 5. Veggie Lovers – $22 Mushrooms, red onions, tomatoes, green peppers, black olives\n    🥓 6. Supreme – $27 All meats and all vegetables\n    🍕 7. Pepperoni, Mushrooms & Red Onions – $23\n    🍕 8. Sausage, Mushrooms & Red Onions – $23\n\nAdd-Ons:\n\n    9. Extra Meat (Sausage, Pepperoni, Ham) – $3 per meat type added\n    10. Extra Veggies (Mushrooms, Onions, Tomatoes, Green P., Olives) – $2 per veggie type\n\nDrinks:\n\n    11. Soda – $2\n    12. Water – $2\n\nCustomizations & Notes\n\n    Adding toppings: For a base pizza, you can add meats for $3 each or veggies for $2 each.\n    Half & Half: If a customer wants 1/2 of one pizza and 1/2 of another, confirm and price based on the more expensive half or a custom combined price; the assistant can note the request for Junior to confirm and finalize the price.\n    Special requests: such as \"extra garlic oil\" or \"extra cheese,\" should be noted for Junior to confirm.\n\nYour Tasks & Response Guidelines:\n\n1. Greeting & Initial Interaction:\n\n    \"Hi contact_name! I'm Pizzaiolo, your assistant for JUNIOR'S Artisan Pizza. How can I help with your order today?\"\n    If the customer just says \"hello\" or asks if you're open, confirm you can take their order (if within hours) and ask what they'd like to order.\n\n2. Menu Inquiries:\n\n    If asked \"What pizzas do you have?\" or \"Can I see the menu?\", respond: \"Sure, contact_name! All our artisan pizzas are 14 inches. Here's what we offer:\"\n        List the main pizzas and mention customizable toppings and add-ons.\n        Emphasize: \"You can add extra meats for $3 or extra veggies for $2 to any pizza. What sounds good?\"\n\n3. Taking Orders:\n\n    Carefully listen to what the customer wants, including size, toppings, and customizations.\n    Clarify ambiguous requests (e.g., \"Is that a Margherita with extra green peppers?\")\n    Calculate the total price by summing base pizza prices plus any add-ons.\n    Confirm details: \"Just to confirm, contact_name, you want [quantity] pizza(s): [list of pizzas with customizations], totaling $[amount]. Is that correct?\"\n    Once the customer confirms, log the Confirmed details into the system and send it for processing with timestamp via Tool_pedidos.\n\n4. Order Status Inquiries:\n\n    If asked \"Is my order ready?\" or \"What's the status?\", reply: \"Hi contact_name, you ordered [quantity] [pizza types] today, on [date]. Your estimated pickup time was around [time]. Junior is working on it! You can come to pick it up when it's ready.\"\n    Check the order status with Tool_pedidos and inform accordingly.\n    If delayed, send a gentle reminder or ask for a status update from Junior.\n\n5. Handling Issues & Miscellaneous Questions:\n\n    If the restaurant is unexpectedly closed, say: \"I'm sorry, contact_name, but Junior's is closed today. We'll be back tomorrow. Disculpa las molestias.\"\n    For questions about reservations or other non-menu requests, politely clarify: \"We mainly handle pickup orders. If you tell me how many pizzas and what time, I can pass it to Junior.\"\n    For requests not on the menu, note them for Junior to confirm if possible.\n\nAdditional Guidelines:\n\n    Always address the customer by contact_name.\n    Be friendly, polite, and concise.\n    Clearly confirm orders and customizations before finalizing.\n    If unsure about any detail, note it and let Junior confirm later.\n    Assume orders are for pickup unless otherwise specified.\n    End interactions positively with thanks or friendly wishes.\n\nTechnical Details:\n\n    When sending the order to the tool Tool_pedidos, include:\n        chat history id,\n        message_from,\n        state as \"processing\",\n        Order details, including contact_name, unit price and Total price,\n        Timestamp.\n\n    Use the calculator tool to compute totals when needed."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        1860,
+        -1200
+      ],
+      "id": "886ed210-8d5c-465f-83eb-524aa661c9ea",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-001",
+        "options": {
+          "topP": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        -940
+      ],
+      "id": "cd398a78-3bc0-472a-9706-d121968305a2",
+      "name": "Google Gemini Chat Model",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "638809592646439",
+        "recipientPhoneNumber": "={{ $('WhatsApp_Trigger').item.json.messages[0].from }}",
+        "textBody": "={{ $json.output }}",
+        "additionalFields": {},
+        "path": "c76b0fe4-16c7-4300-bd9d-3443b3b08ada"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        2340,
+        -1200
+      ],
+      "id": "a4758f9d-18c0-4bee-85f2-eef1ec80d1c9",
+      "name": "WhatsApp Business Cloud",
+      "webhookId": "c76b0fe4-16c7-4300-bd9d-3443b3b08ada",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('DatosNormalizados').item.json.messages.wa_id }}",
+        "tableName": "historial_conversaciones_JuniorsPizza",
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        1720,
+        -940
+      ],
+      "id": "d1b2537a-bc01-4107-9b60-cc183eeeaaca",
+      "name": "Postgres Chat Memory",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "Message",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -820,
+        -1200
+      ],
+      "id": "a1b1ee03-bb8d-4917-a70f-a9c5cfb4157b",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "25af255d-2f8a-4242-b021-800f9da53ee8",
+                    "leftValue": "={{ $('WhatsApp_Trigger').item.json.messages[0].type }}",
+                    "rightValue": "audio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "audio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b2b3e29a-54e3-4b49-9ca2-a775630397b1",
+                    "leftValue": "={{ $('WhatsApp_Trigger').item.json.messages[0].type }}",
+                    "rightValue": "video",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "video"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "12f36a6b-c457-4ecd-b9c9-b641f7d7628d",
+                    "leftValue": "={{ $('WhatsApp_Trigger').item.json.messages[0].type }}",
+                    "rightValue": "image",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "image"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('WhatsApp_Trigger').item.json.messages[0].type }}",
+                    "rightValue": "text",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "63084834-85f9-4996-8619-6eaae1b3d879"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "text"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -380,
+        -1220
+      ],
+      "id": "8ccec394-96cb-41b8-aad7-e3a7d5fce701",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp_Trigger').item.json.messages[0].audio.id }}",
+        "path": "fd5ccad5-9fca-4f05-ab4a-f76880e125d7"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        -2160
+      ],
+      "id": "8b6d9d93-95ba-4466-8744-fa49fed99591",
+      "name": "WhatsApp Business Audio",
+      "webhookId": "fd5ccad5-9fca-4f05-ab4a-f76880e125d7",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        80,
+        -2160
+      ],
+      "id": "dbfea9c3-47fb-4eb7-a29c-c58a471fd35c",
+      "name": "HTTP Download Audio",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp_Trigger').item.json.messages[0].video.id }}",
+        "path": "3253e6b9-4f68-49d7-923d-c78da151cf1d"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        -1900
+      ],
+      "id": "d44d7bad-566e-46bb-a5fe-f460ee275211",
+      "name": "WhatsApp Business Video",
+      "webhookId": "3253e6b9-4f68-49d7-923d-c78da151cf1d",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        80,
+        -1900
+      ],
+      "id": "c94062d3-bc58-4df1-9551-79cb4fd68fdf",
+      "name": "HTTP Download Video",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-thinking-exp-01-21:generateContent",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googlePalmApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "jsonBody": "={{\n{\n  \"contents\": [{\n    \"parts\":[\n      {\"text\": \"Describe this video\"},\n        {\"inlineData\" : {\n          \"mimeType\": 'video/${$binary.data.fileExtension}',\n          \"data\": $input.item.binary.data.data }\n        }\n      ]\n  }]\n}\n}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        300,
+        -1900
+      ],
+      "id": "5408af2b-551a-4199-b03e-ec5db9b39508",
+      "name": "Convert Video to Text",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-thinking-exp-01-21:generateContent",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googlePalmApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "jsonBody": "={{\n{\n  \"contents\": [{\n    \"parts\":[\n      {\"text\": \"Transcribe this audio\"},\n        {\"inlineData\" : {\n          \"mimeType\": 'audio/${$binary.data.fileExtension}',\n          \"data\": $input.item.binary.data.data }\n        }\n      ]\n  }]\n}\n}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        300,
+        -2160
+      ],
+      "id": "bdc16401-fb3c-4334-b904-c083c68b97b8",
+      "name": "Convert Audio to Text",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $json.image.id }}\n{{ $('WhatsApp_Trigger').item.json.messages[0].image.id }}",
+        "path": "4064810c-c863-4bad-b41a-50a566e4216a"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        -1660
+      ],
+      "id": "7ea21215-7a1e-46f9-ad40-0a0b9b89683f",
+      "name": "WhatsApp Business Image",
+      "webhookId": "4064810c-c863-4bad-b41a-50a566e4216a",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        160,
+        -1660
+      ],
+      "id": "8ba7aecb-8b4f-4232-85d7-4a6af322b310",
+      "name": "HTTP Download Image",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "here is an image sent by the user. Describe the image and transcribe any text visible in the image, send the timestamp too.",
+        "messages": {
+          "messageValues": [
+            {
+              "type": "HumanMessagePromptTemplate",
+              "messageType": "imageBinary"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        380,
+        -1660
+      ],
+      "id": "2392fc0a-ea50-47b0-a490-287a18a0b4ce",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-thinking-exp-01-21",
+        "options": {
+          "topK": 2
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        460,
+        -1440
+      ],
+      "id": "7dbae9bd-0921-4a5e-8c93-721647a59086",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f4cf6fac-b47f-4577-be0b-f6174ad53ee8",
+              "name": "content",
+              "value": "={{ $json.candidates[0].content.parts[0].text }}",
+              "type": "string"
+            },
+            {
+              "id": "5933bfca-4a14-41dd-8b58-2214b2bb8a59",
+              "name": "audio",
+              "value": "={{ $('Switch').item.json.audio }}",
+              "type": "object"
+            },
+            {
+              "id": "219adf5a-0a41-4b90-aa1f-f807bbd9584a",
+              "name": "caption",
+              "value": "={{ $('Switch').item.json.audio }}",
+              "type": "string"
+            },
+            {
+              "id": "14f06f92-2fbc-48e3-82c0-bd4e2b1e63db",
+              "name": "timestamp",
+              "value": "={{ $('Switch').item.json.timestamp }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        -2160
+      ],
+      "id": "930d4da9-77ea-4efe-ae2a-3cf6ec71b834",
+      "name": "format Response 1.1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f4cf6fac-b47f-4577-be0b-f6174ad53ee8",
+              "name": "content",
+              "value": "={{ $json.candidates[0].content.parts[0].text }}",
+              "type": "string"
+            },
+            {
+              "id": "5933bfca-4a14-41dd-8b58-2214b2bb8a59",
+              "name": "audio",
+              "value": "={{ $('Switch').item.json.video }}",
+              "type": "object"
+            },
+            {
+              "id": "219adf5a-0a41-4b90-aa1f-f807bbd9584a",
+              "name": "caption",
+              "value": "={{ $('Switch').item.json.video }}",
+              "type": "string"
+            },
+            {
+              "id": "2860bd66-5b97-44cd-9f9c-92a3b6f8ac3f",
+              "name": "timestamp",
+              "value": "={{ $('Switch').item.json.timestamp }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        -1900
+      ],
+      "id": "b0fbbbbe-538c-4b2f-aceb-0c4357b90ea4",
+      "name": "format Response 1.2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2c40f9e5-0092-4f8d-b894-fbe88c07f012",
+              "name": "message_type",
+              "value": "={{ $('DatosNormalizados').item.json.messages.type }}",
+              "type": "string"
+            },
+            {
+              "id": "495f02f7-36ef-4394-8b8a-409cdc13a119",
+              "name": "message_text",
+              "value": "={{ $json.messages.join(\"\\n\") }}",
+              "type": "string"
+            },
+            {
+              "id": "54949ec5-a1dc-4674-be56-ce888b946f8f",
+              "name": "message_from",
+              "value": "={{ $('DatosNormalizados').item.json.contact.wa_id }}",
+              "type": "string"
+            },
+            {
+              "id": "c170f06d-cd61-4fac-a26f-58b5f4cf1c43",
+              "name": "message_caption",
+              "value": "={{ $('DatosNormalizados').item.json.audio && $('Switch').item.json.audio.caption ||'' }}\n{{ $('DatosNormalizados').item.json.video && $('Switch').item.json.video.caption ||'' }}\n{{ $('DatosNormalizados').item.json.image && $('Switch').item.json.image.caption ||'' }}\n",
+              "type": "string"
+            },
+            {
+              "id": "5b913e66-d8e1-4740-aec0-db5e19864451",
+              "name": "message_timestamp",
+              "value": "={{ $('DatosNormalizados').item.json.messages.timestamp }}",
+              "type": "string"
+            },
+            {
+              "id": "15eba086-56c2-454c-b9f7-11818b2f2026",
+              "name": "contact_name",
+              "value": "={{ $('DatosNormalizados').item.json.contact.contact_name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1560,
+        -1200
+      ],
+      "id": "64c07644-4096-4419-b021-2a7eb7817b9d",
+      "name": "Get User's Message"
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('DatosNormalizados').item.json.messages.wa_id }}_buffer",
+        "messageData": "={{ JSON.stringify( $('DatosNormalizados').item.json.messages) }}",
+        "tail": true
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1760,
+        -1200
+      ],
+      "id": "16098403-06db-485a-a573-93a9a575d3e9",
+      "name": "Push messages Buffer",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "Message",
+        "key": "={{ $('DatosNormalizados').item.json.messages.wa_id }}_buffer",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        -1200
+      ],
+      "id": "1e81c0e5-93be-4a7e-91e8-f2af12c301e9",
+      "name": "Get Messages Buffer",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1aa42921-54f2-41bb-95b5-ba1b6d060030",
+              "name": "metadata.phone_number_id",
+              "value": "={{ $json.metadata.phone_number_id }}",
+              "type": "string"
+            },
+            {
+              "id": "63ade6a4-e18b-4ed4-b05b-2131d6516cd6",
+              "name": "contact.contact_name",
+              "value": "={{ $json.contacts[0].profile.name }}",
+              "type": "string"
+            },
+            {
+              "id": "23b3f795-6820-473a-a5a3-8e5ee21830ab",
+              "name": "contact.wa_id",
+              "value": "={{ $json.contacts[0].wa_id }}",
+              "type": "string"
+            },
+            {
+              "id": "5a126c26-6a1a-4f60-bb5a-d1dfe7fa8cc2",
+              "name": "messages.wa_id",
+              "value": "={{ $json.contacts[0].wa_id }}",
+              "type": "string"
+            },
+            {
+              "id": "436d0d7e-112e-4ea0-afbd-857b08d81371",
+              "name": "messages.timestamp",
+              "value": "={{ $json.messages[0].timestamp }}",
+              "type": "string"
+            },
+            {
+              "id": "11441df4-e737-4d54-8dd1-270c24c8d7b1",
+              "name": "messages.content",
+              "value": "={{ $json.messages[0].text.body }}",
+              "type": "string"
+            },
+            {
+              "id": "29a8ea5f-3de6-4aa4-9bae-0fc23babd614",
+              "name": "messages.type",
+              "value": "={{ $json.messages[0].type }}",
+              "type": "string"
+            },
+            {
+              "id": "c40bafad-a962-4716-b7cb-c6ac792eee2e",
+              "name": "field",
+              "value": "={{ $json.field }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1980,
+        -1200
+      ],
+      "id": "fe0d10e1-2ae5-4a99-a74c-b37a022ab193",
+      "name": "DatosNormalizados"
+    },
+    {
+      "parameters": {
+        "path": "2a185775-bf6e-4564-85b7-db763a9c36de"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1040,
+        -1000
+      ],
+      "id": "9045ff9b-80ac-4bf8-bf32-1178f14f882e",
+      "name": "Wait",
+      "webhookId": "2a185775-bf6e-4564-85b7-db763a9c36de"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1040,
+        -1405
+      ],
+      "id": "5cc1dbd3-f54f-4ee4-afa4-bf96bccb082d",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ JSON.parse($json.Message.last()).wa_id }}",
+                    "rightValue": "={{ $('DatosNormalizados').item.json.messages.wa_id }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEquals"
+                    },
+                    "id": "fd5ab47e-750f-40b5-af50-e7db1f1ff4ba"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "No hacer nada"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "569f605f-3bfc-42d5-9156-d9514a6292a6",
+                    "leftValue": "={{ DateTime.fromMillis(Number(JSON.parse($json.Message.last()).timestamp))}}\n",
+                    "rightValue": "={{ DateTime.fromMillis($now.minus(5,'seconds').toSeconds())}}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "before"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Seguir"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "Esperar"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1260,
+        -1200
+      ],
+      "id": "d6e6a95c-892d-49c3-8cc6-03bcdc4bfa52",
+      "name": "Switch Espera"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{JSON.parse($json.Message) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -600,
+        -1200
+      ],
+      "id": "cd2e2ee1-e0cb-4a15-a9f9-8e3814e26bdd",
+      "name": "JSON Parse"
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        880,
+        -1220
+      ],
+      "id": "61d199bc-406e-4961-b665-5014e891b254",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "timestamp"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        -1200
+      ],
+      "id": "c9ccacd0-31ff-4b90-8811-2329554c520a",
+      "name": "Sort"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "content",
+              "renameField": true,
+              "outputFieldName": "messages"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        -1200
+      ],
+      "id": "591a216c-ac1d-40f1-9f97-4d8ca4db19bf",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {},
+        "path": "3e3051f5-910e-461b-a1b3-da9402ff4149"
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2200,
+        -1200
+      ],
+      "id": "b2f13a0b-7f18-4a9b-aabb-b7f253153cb0",
+      "name": "WhatsApp_Trigger",
+      "webhookId": "3e3051f5-910e-461b-a1b3-da9402ff4149",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('DatosNormalizados').item.json.messages.wa_id }}_buffer"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1020,
+        -1200
+      ],
+      "id": "387c9af5-a589-45b6-87fc-05bc090d8e99",
+      "name": "Delete Messages Buffer",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "description": "=Use this tool to send the confirmed Order, sending, the message_from, the state as \"processing\", the Order with customer_name, prices and the Total Price as a Total, the message´s order id and the timestamp.\nuse this tool to ask Junior for the Order status, he will give you a response about the status\n",
+        "workflowId": {
+          "__rl": true,
+          "value": "NnFJVB43HGrgwUOw",
+          "mode": "list",
+          "cachedResultName": "Agente Pedidos TG_JPizza"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "message_timestamp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('message_timestamp', ``, 'number') }}",
+            "message_text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('message_text', ``, 'string') }}",
+            "message_from": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('message_from', ``, 'string') }}",
+            "message_state": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('message_state', ``, 'string') }}",
+            "message_id": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('message_id', ``, 'number') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "message_text",
+              "displayName": "message_text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "message_from",
+              "displayName": "message_from",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "message_timestamp",
+              "displayName": "message_timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "message_id",
+              "displayName": "message_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "message_state",
+              "displayName": "message_state",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1920,
+        -940
+      ],
+      "id": "6d5fe704-76db-4f31-9649-481bf566712b",
+      "name": "Tool_pedidos"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        2160,
+        -960
+      ],
+      "id": "338a475e-7d6e-4836-bada-a759b09242bc",
+      "name": "Calculator"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Bogota",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-05-20T21:23:23.047Z",
+      "createdAt": "2025-05-20T21:23:23.047Z",
+      "role": "workflow:owner",
+      "workflowId": "3gexuHRyq1A0H5Cd",
+      "projectId": "bMLPVLxvJNyYpOg4",
+      "project": {
+        "updatedAt": "2025-04-10T19:37:33.834Z",
+        "createdAt": "2025-04-10T19:34:51.491Z",
+        "id": "bMLPVLxvJNyYpOg4",
+        "name": "andres mora <anlemoca.pm@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "1be52bcb-fd69-4000-ad4f-8a9b9553dae7",
+        "projectRelations": [
+          {
+            "updatedAt": "2025-04-10T19:34:51.491Z",
+            "createdAt": "2025-04-10T19:34:51.491Z",
+            "userId": "1be52bcb-fd69-4000-ad4f-8a9b9553dae7",
+            "projectId": "bMLPVLxvJNyYpOg4",
+            "user": {
+              "updatedAt": "2026-02-13T18:26:13.532Z",
+              "createdAt": "2025-04-10T19:34:49.729Z",
+              "id": "1be52bcb-fd69-4000-ad4f-8a9b9553dae7",
+              "email": "anlemoca.pm@gmail.com",
+              "firstName": "andres",
+              "lastName": "mora",
+              "personalizationAnswers": {
+                "version": "v4",
+                "personalization_survey_submitted_at": "2025-04-10T19:39:59.967Z",
+                "personalization_survey_n8n_version": "1.86.1",
+                "automationGoalDevops": [
+                  "data-syncing",
+                  "monitoring-alerting"
+                ],
+                "companySize": "<20",
+                "companyType": "systems-integrator",
+                "role": "it",
+                "reportedSource": "friend"
+              },
+              "settings": {
+                "userActivated": true,
+                "easyAIWorkflowOnboarded": true,
+                "firstSuccessfulWorkflowId": "UvY47ZI6TkdR3EGX",
+                "userActivatedAt": 1748458737814,
+                "npsSurvey": {
+                  "responded": true,
+                  "lastShownAt": 1764727678159
+                }
+              },
+              "disabled": false,
+              "mfaEnabled": false,
+              "lastActiveAt": "2026-02-13",
+              "isPending": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "updatedAt": "2025-04-19T14:32:24.162Z",
+      "createdAt": "2025-04-19T14:32:24.162Z",
+      "id": "g3NaHHARog1Wx0jT",
+      "name": "Comida con Menú"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-05-20T21:23:23.047Z",
+  "versionCounter": 1,
+  "versionId": "b8736157-3bf3-4a26-a65e-ce55f5d557db"
+}
